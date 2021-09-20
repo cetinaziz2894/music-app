@@ -13,7 +13,7 @@ const renderList = (list) => {
 
 const mapStateToProps = (state) => {
     return {
-        videosShown: state?.video?.videos.slice(0,20),
+        videosShown: state?.video?.videos,
         genres:state?.video?.genres,
         videos:state?.video?.videos
     }
