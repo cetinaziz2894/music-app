@@ -42,6 +42,9 @@ const CardItem = styled.div`
     border-radius: 10px;
     margin:5px;
     height: fit-content;
+    @media (max-width: 1200px){
+        width: 285px;
+    }
 `;
 const CardMedia = styled.div`
     background-image: url(${props => props.img});

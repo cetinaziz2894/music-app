@@ -4,7 +4,9 @@ import styled from 'styled-components';
 function Loader() {
     return (
         <Section>
-            <div className="loader"><div></div><div></div><div></div></div>
+            <div className="loader"><div className="ldio">
+            <div></div><div></div>
+            </div></div>
         </Section>
 
     )

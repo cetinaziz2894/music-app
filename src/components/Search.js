@@ -16,7 +16,7 @@ const Search = ({onSearch}) => {
         <Section>
             <SearchInput placeholder="Search" value={value} onChange={(e) => {
               setValue(e.target.value)
-              onSearch(e.target.value)}
+              onSearch(e.target.value.toLocaleLowerCase())}
               } />
         </Section>
     )
@@ -29,8 +29,6 @@ const Section = styled.div`
   height:100%;
   width:100%;
   text-align: center;
-  @media (max-width: 550px) {
-  }
 `;
 
 const SearchInput = styled.input`

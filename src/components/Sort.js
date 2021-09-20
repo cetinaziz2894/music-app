@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { filterByGenre } from '../actions/video';
+import useWindowDimensions from '../hook/useWindowDimensions';
 
 
 const renderList = (list) => {
@@ -22,10 +23,10 @@ function Sort() {
 
     const dispatch = useDispatch();
     const {genres} = useSelector(state => state.video);
-
+    const { width } = useWindowDimensions();
     return (
        <Section>
-           <div style={{width:'90%'}}>
+           <div style={{width: width > 768 ? '90%' : '100%'}}>
             {
                    genres && 
                    <Select 
@@ -45,11 +46,12 @@ export default connect(mapStateToProps)(Sort);
 
 const Section = styled.div`
     height:100%;    
-    width:50%;
+    width:100%;
     display: flex;
     flex-direction:row;
     align-items:center;
     justify-content:center;
-    @media (max-width: 550px) {
+    @media (max-width: 768px) {
+        margin:5px 0px;
     }
 `;

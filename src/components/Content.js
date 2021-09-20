@@ -13,7 +13,7 @@ const Content = ({genres, videos, videosShown}) => {
     return (
         <>
         {
-              (genres && videos && videosShown) &&
+              (genres && videos && videosShown.length > 0) &&
                 <Section>
                     {
                     videosShown && videosShown.map((video) => {
@@ -22,7 +22,13 @@ const Content = ({genres, videos, videosShown}) => {
                     );})
                     }
                 </Section>
-            }
+        }
+        {
+            videosShown.length === 0 && 
+            <Section>
+                <Message>No Data Found !</Message>
+            </Section>
+        }
         </>
         
     )
@@ -32,11 +38,12 @@ export default connect(mapStateToProps)(Content);
 const Section = styled.div`
     height:100%; 
     width:100%;
-    display: flex;
-    flex-direction:row;
-    flex-wrap: wrap;
-    justify-content:center;
-    align-items: start;
-    @media (max-width: 550px) {
-    }
+    display: initial;
+    text-align: center;
+`;
+
+const Message = styled.p`
+    color:#e88888;
+    box-shadow: 10px 10px 40px 2px rgba(128, 128, 128, 0.4);
+    padding:10px;
 `;
