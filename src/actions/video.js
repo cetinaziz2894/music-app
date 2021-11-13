@@ -1,7 +1,7 @@
 import {FILTER_VIDEOS_BY_GENRE, FILTER_VIDEOS_BY_MULTIPLE_GENRE, FILTER_VIDEOS_BY_NAME, GET_GENRES, GET_VIDEOS, SET_MESSAGE} from './types'
 
 export const getGenres = () => (dispatch) => {
-    return fetch("http://localhost:3001/genres")
+    return fetch("https://mockdata-json-server.herokuapp.com/genres")
           .then(res => res.json())
           .then(
             (result) => {
@@ -28,7 +28,7 @@ export const getGenres = () => (dispatch) => {
 }
 
 export const getVideos = () => (dispatch) => {
-    return fetch("http://localhost:3001/videos")
+    return fetch("https://mockdata-json-server.herokuapp.com/videos")
           .then(res => res.json())
           .then(
             (result) => {
