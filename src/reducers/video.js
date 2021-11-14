@@ -51,11 +51,8 @@ export default function (state = initialState, action) {
                     videosShown:state.videos
                 }
             }
-            payload.map(filter => state.videos.filter(video => 
-                { if(video.genre_id === filter)
-                    {
-                     filteredArr.push(video) 
-                    }
+            payload.map(filter => state.videos?.filter((video) => 
+                { return video.genre_id === filter ?  filteredArr.push(video) :null;
                 }));
             const filterByMultipleGenreState = filteredArr.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
             return {
