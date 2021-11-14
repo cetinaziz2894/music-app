@@ -7,11 +7,6 @@ Open terminal in the project directory:
 ### `npm install`
 
 ## Second Step
-Open terminal in the project directory:
-### `cd mock`
-### `npm run mock-start`
-
-## Third Step
 Open new terminal in the project directory:
 ### `npm run start`
 
