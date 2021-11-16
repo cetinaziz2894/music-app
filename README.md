@@ -1,4 +1,4 @@
-# Voting System - React
+# Music App - React
 
 <img src="https://github.com/cetinaziz2894/music-app/blob/main/public/screen.PNG" alt="screenshot" style="width:800px;" >
 
